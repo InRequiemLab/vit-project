@@ -5,8 +5,8 @@ from ultralytics import YOLO
 import pyttsx3
 
 app = Flask(__name__)
-model = YOLO("yolov8n.pt")
-cap = cv2.VideoCapture("http://192.168.137.14:81/stream")
+model = YOLO("/models/detr_model.pt")
+cap = cv2.VideoCapture()
 
 announced_objects = set()
 

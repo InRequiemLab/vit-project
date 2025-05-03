@@ -1,10 +1,13 @@
 from flask import Flask, render_template, Response
 import cv2
-from ultralytics import YOLO
+import sys
+sys.path.insert(0, './training')  # adjust to your folder
+
+from detection import DETECT
+
+model = DETECT("models/detr_model.pt")
 
 app = Flask(__name__)
-
-model = YOLO("models/detr_model.pt")
 
 cap = cv2.VideoCapture(0)  
 def generate_frames():

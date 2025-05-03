@@ -3,7 +3,7 @@
 import torch
 from PIL import Image
 
-from detection.models.yolo.segment import SegmentationPredictor
+from detection.models.detr.segment import SegmentationPredictor
 from detection.utils import DEFAULT_CFG, checks
 from detection.utils.metrics import box_iou
 from detection.utils.ops import scale_masks

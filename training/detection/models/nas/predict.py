@@ -2,7 +2,7 @@
 
 import torch
 
-from detection.models.yolo.detect.predict import DetectionPredictor
+from detection.models.detr.detect.predict import DetectionPredictor
 from detection.utils import ops
 
 

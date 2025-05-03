@@ -2,7 +2,7 @@
 
 from copy import copy
 
-from detection.models.yolo.detect import DetectionTrainer
+from detection.models.detr.detect import DetectionTrainer
 from detection.nn.tasks import RTDETRDetectionModel
 from detection.utils import RANK, colorstr
 

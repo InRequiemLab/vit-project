@@ -4,7 +4,7 @@ import torch
 
 from detection.data import YOLODataset
 from detection.data.augment import Compose, Format, v8_transforms
-from detection.models.yolo.detect import DetectionValidator
+from detection.models.detr.detect import DetectionValidator
 from detection.utils import colorstr, ops
 
 __all__ = ("RTDETRValidator",)  # tuple or list

@@ -287,8 +287,8 @@ class BasePredictor:
         Yields:
             (ultralytics.engine.results.Results): Results objects.
         """
-        if self.args.verbose:
-            LOGGER.info("")
+        # if self.args.verbose:
+            # LOGGER.info("")
 
         # Setup model
         if not self.model:
@@ -349,8 +349,8 @@ class BasePredictor:
                         s[i] += self.write_results(i, Path(paths[i]), im, s)
 
                 # Print batch results
-                if self.args.verbose:
-                    LOGGER.info("\n".join(s))
+                # if self.args.verbose:
+                    # LOGGER.info("\n".join(s))
 
                 self.run_callbacks("on_predict_batch_end")
                 yield from self.results
@@ -363,10 +363,10 @@ class BasePredictor:
         # Print final results
         if self.args.verbose and self.seen:
             t = tuple(x.t / self.seen * 1e3 for x in profilers)  # speeds per image
-            LOGGER.info(
-                f"Speed: %.1fms preprocess, %.1fms inference, %.1fms postprocess per image at shape "
-                f"{(min(self.args.batch, self.seen), getattr(self.model, 'ch', 3), *im.shape[2:])}" % t
-            )
+            # LOGGER.info(
+            #     f"Speed: %.1fms preprocess, %.1fms inference, %.1fms postprocess per image at shape "
+            #     f"{(min(self.args.batch, self.seen), getattr(self.model, 'ch', 3), *im.shape[2:])}" % t
+            # )
         if self.args.save or self.args.save_txt or self.args.save_crop:
             nl = len(list(self.save_dir.glob("labels/*.txt")))  # number of labels
             s = f"\n{nl} label{'s' * (nl > 1)} saved to {self.save_dir / 'labels'}" if self.args.save_txt else ""

@@ -1,8 +1,7 @@
 from flask import Flask, render_template, Response
 import cv2
 import sys
-sys.path.insert(0, './training')  # adjust to your folder
-
+sys.path.insert(0, './training') 
 from detection import DETECT
 
 model = DETECT("models/detr_model.pt")
@@ -15,7 +14,7 @@ def generate_frames():
         ret, frame = cap.read()
         if not ret:
             break
-
+        frame = cv2.flip(frame, 1)
         results = model(frame)
         for result in results:
             if hasattr(result, 'names') and result.names:

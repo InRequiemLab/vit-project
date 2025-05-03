@@ -2,7 +2,7 @@
 
 import torch
 
-from detection.models.yolo.detect import DetectionValidator
+from detection.models.detr.detect import DetectionValidator
 from detection.utils import ops
 
 __all__ = ["NASValidator"]
